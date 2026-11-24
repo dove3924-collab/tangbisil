@@ -15,6 +15,7 @@ import ShapesGame from './shapes/ShapesGame'
 import CableGame from './cable/CableGame'
 import FramedGame from './framed/FramedGame'
 import FramedResult from './framed/FramedResult'
+import StatusPage from './status/StatusPage'
 
 initAnalytics()
 
@@ -32,6 +33,7 @@ export default function App() {
         <PageViews />
         <Routes>
           <Route path="/" element={<Lobby />} />
+          <Route path="/status" element={<StatusPage />} />
           <Route path="/r/:code" element={<Room />} />
           <Route path="/escape" element={<EscapeGame />} />
           <Route path="/escape/result" element={<EscapeResult />} />

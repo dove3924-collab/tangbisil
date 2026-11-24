@@ -1,3 +1,4 @@
+import StatusStrip from '../status/Strip'
 import { useMemo, useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FILE_LABEL, GAMES, type Game } from '../lib/games'
@@ -68,6 +69,7 @@ export default function Lobby() {
 
   return (
     <div className="lobby">
+      <StatusStrip />
       <header className="topbar">
         <div className="wrap topbar-in">
           <a className="logo" href="/" onClick={(e) => { e.preventDefault(); setTab('all'); setQuery('') }}>☕ 탕비실</a>
