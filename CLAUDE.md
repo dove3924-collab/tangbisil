@@ -32,3 +32,13 @@
 2. 홈 개편 + 탕비실 디자인
 3. 점심 메뉴 추천 (오늘의 추천·다시 뽑기·팀 투표)
 4. 운세
+
+## 상태창 1차 (claude/status-window)
+- `/status` 페이지 + 홈 맨 위 한 줄 띠(`src/status/Strip.tsx`)
+- 파일: `src/status/{settings.ts,calc.ts,Widget.tsx,EditPop.tsx,Onboard.tsx,SettingsPanel.tsx,pip.tsx,StatusPage.tsx,status.css}` — CSS 클래스는 전부 `st-` 접두사
+- 저장: localStorage `tbs.status` (서버 전송 없음), 탭·작은 창끼리 바로 동기화
+- 스킨 4개(위젯/RPG/주식/사원증), 👁 금액 가리기, 숫자 클릭 → 말풍선 편집, ⚙ 전체 설정
+- 📌 항상 위 작은 창 = Document PiP (크롬·엣지). 미지원 브라우저는 `/status?popup=1` 일반 팝업
+- 작은 창: ➖ 한 줄 바 ↔ ⤢ 펼치기, Esc 두 번 → 위젯 스킨 + 금액 가리기
+- 월급날이 주말이면 앞 금요일로 계산 (공휴일은 아직 미반영)
+- 운세·점심 메뉴는 '곧 열려요' 토스트
