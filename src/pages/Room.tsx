@@ -27,7 +27,7 @@ export default function Room() {
         ) : (
           <p className="muted sm">방장이 보낸 초대 링크를 그대로 열어보세요. 방은 아무도 없으면 바로 사라져요.</p>
         )}
-        <Link to="/">로비로 돌아가기</Link>
+        <Link to="/games">게임 목록으로</Link>
       </Center>
     )
   if (state.kind === 'error')
@@ -102,7 +102,7 @@ function JoinForm({ room, onJoined }: { room: RoomPublic; onJoined: () => Promis
         <button className="btn-primary" disabled={busy || (full && !room.isHost) || room.status !== 'waiting'}>
           {room.status !== 'waiting' ? '게임 진행 중' : full && !room.isHost ? '방이 꽉 찼어요' : busy ? '입장 중…' : '입장'}
         </button>
-        <Link className="muted sm back" to="/">로비로</Link>
+        <Link className="muted sm back" to="/games">게임 목록</Link>
       </form>
     </div>
   )

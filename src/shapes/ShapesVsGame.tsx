@@ -121,7 +121,7 @@ export default function ShapesVsGame({ room }: { room: RoomFull }) {
   const leave = async () => {
     if (state?.phase === 'play' && !window.confirm('대결 중에 나가면 이번 대결에는 다시 들어올 수 없어요. 나갈까요?')) return
     try { await api.leaveRoom(room.code) } catch { /* 무시 */ }
-    nav('/')
+    nav('/games')
   }
   const restart = async () => {
     try { await api.shvStart(room.code, battlePuzzles(state?.level ?? 'normal')); await refresh(); poke() } catch (e) { flash(e instanceof ApiError ? e.message : '시작하지 못했어요') }

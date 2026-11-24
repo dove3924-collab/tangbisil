@@ -801,7 +801,7 @@ export default function EscapeGame() {
           </div>
           <div className="xe-btns">
             <button onClick={copyShare}>자랑 링크 복사</button><button onClick={reset}>처음부터</button>
-            <button onClick={() => nav('/')}>로비로</button><button className="pri" onClick={() => setShowClear(false)}>닫기</button>
+            <button onClick={() => nav('/games')}>게임 목록</button><button className="pri" onClick={() => setShowClear(false)}>닫기</button>
           </div>
         </Dialog>
       )}

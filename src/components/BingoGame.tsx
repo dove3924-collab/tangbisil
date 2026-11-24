@@ -23,7 +23,7 @@ export default function BingoGame({ room }: { room: RoomFull }) {
   const leave = async () => {
     if (state && state.phase !== 'result' && !window.confirm('게임 중에 나가면 이번 판에는 다시 들어올 수 없어요. 나갈까요?')) return
     try { await api.leaveRoom(room.code) } catch { /* 무시 */ }
-    nav('/')
+    nav('/games')
   }
 
   const myTurnNow = !!state && state.phase === 'call' && !!state.deadline && state.playerIds[state.turnIndex] === room.me

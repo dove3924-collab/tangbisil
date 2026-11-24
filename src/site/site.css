@@ -1,0 +1,145 @@
+/* 탕비실 공통 (ts- 접두사) */
+.ts-page, .ts-head, .ts-foot { --cr: #fbf6ee; --br: #6b4426; --br2: #8a5a33; --ln: #eadfce; --mu: #8a7a66; --ink: #2a2118; }
+.ts-page { min-height: 100vh; background: var(--cr); color: var(--ink); display: flex; flex-direction: column; }
+.ts-page main { flex: 1; width: 100%; }
+.ts-in { max-width: 1040px; margin: 0 auto; padding-left: 20px; padding-right: 20px; box-sizing: border-box; width: 100%; }
+.ts-narrow { max-width: 760px; }
+.ts-mut { color: var(--mu); font-size: 12.5px; }
+.ts-center { text-align: center; margin: 18px 0 30px; }
+
+/* 머리글 */
+.ts-head { background: var(--cr); border-bottom: 1px solid var(--ln); position: sticky; top: 0; z-index: 20; }
+.ts-head-in { display: flex; align-items: center; gap: 12px; height: 58px; }
+.ts-logo { font-weight: 800; font-size: 20px; color: var(--br); text-decoration: none; white-space: nowrap; }
+.ts-nav { display: flex; gap: 2px; margin-left: auto; }
+.ts-nav a { padding: 7px 12px; border-radius: 9px; text-decoration: none; color: #4a3b2c; font-size: 14.5px; font-weight: 500; white-space: nowrap; }
+.ts-nav a:hover { background: #f1e8da; }
+.ts-nav a.on { background: var(--br); color: #fff; }
+.ts-ni { margin-right: 4px; }
+.ts-foot { border-top: 1px solid var(--ln); color: var(--mu); font-size: 12.5px; padding: 18px 0 26px; margin-top: 30px; }
+
+/* 버튼 */
+.ts-btn { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--br); background: var(--br); color: #fff; padding: 7px 14px; border-radius: 9px; font-size: 13.5px; font-weight: 700; cursor: pointer; text-decoration: none; white-space: nowrap; font-family: inherit; }
+.ts-btn:hover { background: var(--br2); }
+.ts-btn:disabled { opacity: .55; cursor: default; }
+.ts-btn.ts-o { background: #fff; color: var(--br); }
+.ts-btn.ts-o:hover { background: #f8f1e6; }
+.ts-btn.ts-big { padding: 11px 20px; font-size: 15px; border-radius: 11px; }
+.ts-link { background: none; border: 0; color: var(--mu); text-decoration: underline; cursor: pointer; font-size: 12.5px; }
+.ts-more { display: inline-block; margin-top: auto; padding-top: 14px; color: var(--br); font-weight: 700; text-decoration: none; font-size: 14px; }
+.ts-more:hover { text-decoration: underline; }
+
+/* 홈 */
+.ts-hero { display: grid; grid-template-columns: 1fr 1.25fr; gap: 28px; align-items: center; padding: 34px 0 26px; }
+.ts-hello h1 { font-size: 30px; margin: 0 0 10px; letter-spacing: -.5px; }
+.ts-hello p { margin: 0; color: #5d5044; line-height: 1.7; font-size: 15px; }
+.ts-stat { background: #2a2118; color: #f3e9da; border-radius: 18px; padding: 20px 22px; box-shadow: 0 12px 30px rgba(60, 35, 15, .18); }
+.ts-stat-main small { color: #c9b8a2; font-size: 13px; }
+.ts-stat-main b { display: block; font-size: 44px; font-weight: 700; letter-spacing: -1px; color: #fff; line-height: 1.15; }
+.ts-prog { height: 6px; border-radius: 3px; background: rgba(255, 255, 255, .12); margin: 10px 0 14px; }
+.ts-prog i { display: block; height: 100%; border-radius: 3px; background: #ffd98a; transition: width 1s linear; }
+.ts-stat-cells { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.ts-stat-cells > div { background: rgba(255, 255, 255, .07); border-radius: 10px; padding: 8px 10px; min-width: 0; }
+.ts-stat-cells small { display: flex; align-items: center; gap: 2px; color: #c9b8a2; font-size: 11.5px; }
+.ts-stat-cells b { display: block; font-size: 16px; color: #ffd98a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ts-eye { background: none; border: 0; padding: 0 2px; cursor: pointer; font-size: 12px; line-height: 1; }
+.ts-stat-foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 14px; font-size: 12.5px; color: #c9b8a2; }
+.ts-stat-foot .ts-btn { background: #ffd98a; color: #2a2118; border-color: #ffd98a; }
+.ts-stat-foot .ts-btn:hover { background: #ffe5ad; }
+
+.ts-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding-bottom: 10px; }
+.ts-cat { background: #fff; border: 1px solid var(--ln); border-radius: 16px; padding: 18px 18px 16px; display: flex; flex-direction: column; min-width: 0; }
+.ts-cat-h { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
+.ts-cat-i { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; font-size: 24px; flex: none; }
+.ts-cat-game .ts-cat-i { background: #e7efff; }
+.ts-cat-fortune .ts-cat-i { background: #f1e9ff; }
+.ts-cat-lunch .ts-cat-i { background: #fff1dc; }
+.ts-cat-h h2 { margin: 0; font-size: 19px; }
+.ts-cat-h small { color: var(--mu); font-size: 12.5px; }
+.ts-glist { list-style: none; margin: 0; padding: 0; }
+.ts-glist a { display: flex; align-items: center; gap: 10px; padding: 8px 6px; border-radius: 9px; text-decoration: none; color: inherit; font-size: 14px; }
+.ts-glist a:hover { background: #f8f1e6; }
+.ts-glist span { width: 22px; text-align: center; }
+.ts-glist small { margin-left: auto; color: var(--mu); font-size: 12px; }
+.ts-fstar { color: #e0a100; letter-spacing: 1px; font-size: 18px; }
+.ts-fstar.ts-big { font-size: 30px; text-align: center; }
+.ts-fhead { margin: 6px 0 12px; font-size: 14.5px; line-height: 1.6; font-weight: 500; }
+.ts-fhead.ts-big { font-size: 18px; text-align: center; margin-bottom: 20px; }
+.ts-frows { list-style: none; margin: 0; padding: 0; font-size: 13.5px; }
+.ts-frows li { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed #efe6d8; }
+.ts-frows b { color: #e0a100; font-weight: 400; letter-spacing: 1px; }
+.ts-lpick { text-align: center; padding: 6px 0 4px; }
+.ts-lemoji { display: block; font-size: 46px; line-height: 1.2; }
+.ts-lemoji.ts-huge { font-size: 76px; }
+.ts-lpick b { display: block; font-size: 24px; margin: 4px 0 2px; }
+.ts-lpick small { color: var(--mu); font-size: 13px; }
+.ts-lbtns { display: flex; gap: 8px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+
+/* 운세·점심 공통 */
+.ts-ptitle { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 28px 0 14px; }
+.ts-ptitle h1 { margin: 0; font-size: 26px; }
+.ts-ptitle small { color: var(--mu); }
+.ts-card { background: #fff; border: 1px solid var(--ln); border-radius: 16px; padding: 18px 20px; margin-bottom: 14px; }
+.ts-card h3 { margin: 0 0 12px; font-size: 16px; }
+.ts-birth { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; }
+.ts-birth label { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.ts-birth input { border: 1px solid #d9cdb8; border-radius: 8px; padding: 6px 9px; font: inherit; }
+.ts-birth small { color: var(--mu); }
+.ts-fmain { padding-top: 24px; }
+.ts-fmain h3 { margin-top: 22px; }
+.ts-areas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ts-area { background: #fbf8f3; border-radius: 12px; padding: 12px 14px; }
+.ts-area > div { display: flex; justify-content: space-between; align-items: center; }
+.ts-area .ts-fstar { font-size: 14px; }
+.ts-area p { margin: 6px 0 0; font-size: 13.5px; color: #4a3b2c; line-height: 1.6; }
+.ts-lucky { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.ts-lucky > div { background: #fbf8f3; border-radius: 12px; padding: 10px; text-align: center; min-width: 0; }
+.ts-lucky small { display: block; color: var(--mu); font-size: 11.5px; margin-bottom: 4px; }
+.ts-lucky b { font-size: 14.5px; display: inline-flex; align-items: center; gap: 5px; }
+.ts-lucky b a { color: var(--br); }
+.ts-lucky i { display: inline-block; width: 13px; height: 13px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, .1); }
+.ts-row-end { display: flex; justify-content: flex-end; margin-top: 16px; }
+.ts-zgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+.ts-z { border: 1px solid #f0e8db; border-radius: 12px; padding: 10px 12px; }
+.ts-z.on { border-color: var(--br); background: #fbf3e7; }
+.ts-z > div { display: flex; align-items: center; gap: 6px; }
+.ts-z em { margin-left: auto; font-style: normal; font-size: 12px; }
+.ts-z p { margin: 4px 0 0; font-size: 12.5px; color: #5d5044; }
+
+.ts-frow { display: flex; gap: 14px; align-items: flex-start; padding: 6px 0; }
+.ts-frow > b { width: 52px; flex: none; padding-top: 6px; font-size: 14px; }
+.ts-chips, .ts-cands { display: flex; flex-wrap: wrap; gap: 6px; }
+.ts-chips button, .ts-cands button { border: 1px solid #d9cdb8; border-radius: 18px; padding: 5px 13px; background: #fff; font-size: 13.5px; cursor: pointer; font-family: inherit; color: inherit; }
+.ts-chips button:hover, .ts-cands button:hover { border-color: var(--br); }
+.ts-chips button.on, .ts-cands button.on { background: var(--br); color: #fff; border-color: var(--br); }
+.ts-cands button { font-size: 12.5px; padding: 4px 10px; }
+.ts-lmain { text-align: center; padding: 26px 20px 20px; }
+.ts-lname { display: block; font-size: 34px; margin: 6px 0 2px; letter-spacing: -.5px; }
+.ts-lmain > small { color: var(--mu); display: block; }
+.ts-lmain p { margin: 10px 0 0; font-size: 15px; color: #4a3b2c; }
+.ts-lmain .ts-lbtns { margin: 20px 0 12px; }
+.ts-lmain.rolling .ts-lname, .ts-lmain.rolling .ts-lemoji { opacity: .55; }
+.ts-hist { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-size: 13.5px; }
+.ts-hist li { background: #fbf8f3; border-radius: 9px; padding: 5px 10px; }
+.ts-hist span { color: var(--mu); margin-right: 6px; font-size: 12px; }
+
+@media (max-width: 860px) {
+  .ts-hero { grid-template-columns: 1fr; padding-top: 22px; gap: 18px; }
+  .ts-cats { grid-template-columns: 1fr; }
+  .ts-lucky { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .ts-in { padding-left: 16px; padding-right: 16px; }
+  .ts-head-in { height: auto; flex-wrap: wrap; padding-top: 10px; padding-bottom: 8px; gap: 6px; }
+  .ts-nav { margin-left: 0; width: 100%; justify-content: space-between; }
+  .ts-nav a { padding: 6px 8px; font-size: 13.5px; }
+  .ts-hello h1 { font-size: 24px; }
+  .ts-stat-main b { font-size: 36px; }
+  .ts-stat-cells { grid-template-columns: 1fr 1fr; }
+  .ts-stat-foot { flex-direction: column; align-items: stretch; text-align: center; }
+  .ts-stat-foot .ts-btn { justify-content: center; }
+  .ts-areas { grid-template-columns: 1fr; }
+  .ts-zgrid { grid-template-columns: 1fr; }
+  .ts-frow { flex-direction: column; gap: 6px; }
+}
+.lobby .ts-in { max-width: 1140px; padding-left: 16px; padding-right: 16px; }

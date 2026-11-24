@@ -69,7 +69,7 @@ export default function WaitingRoom({ room, refresh }: { room: RoomFull; refresh
 
   const leave = async () => {
     try { await api.leaveRoom(room.code) } catch { /* 나가는 중 실패는 무시 */ }
-    nav('/')
+    nav('/games')
   }
 
   const setSetting = (patch: Partial<RoomSettings>) => run(() => api.updateSettings(room.code, patch))

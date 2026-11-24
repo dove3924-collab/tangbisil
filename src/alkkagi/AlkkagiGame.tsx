@@ -228,7 +228,7 @@ export default function AlkkagiGame({ room }: { room: RoomFull }) {
   const leave = async () => {
     if (state && state.phase !== 'result' && !window.confirm('대결 중에 나가면 상대가 이겨요. 나갈까요?')) return
     try { await api.leaveRoom(room.code) } catch { /* 무시 */ }
-    nav('/')
+    nav('/games')
   }
   const resign = async () => {
     if (!window.confirm('항복할까요? 상대가 이번 대결에서 이겨요.')) return
