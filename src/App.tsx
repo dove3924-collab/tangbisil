@@ -16,6 +16,9 @@ import CableGame from './cable/CableGame'
 import FramedGame from './framed/FramedGame'
 import FramedResult from './framed/FramedResult'
 import StatusPage from './status/StatusPage'
+import Home from './site/Home'
+import FortunePage from './site/Fortune'
+import LunchPage from './site/Lunch'
 
 initAnalytics()
 
@@ -32,7 +35,10 @@ export default function App() {
       <BrowserRouter>
         <PageViews />
         <Routes>
-          <Route path="/" element={<Lobby />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/games" element={<Lobby />} />
+          <Route path="/fortune" element={<FortunePage />} />
+          <Route path="/lunch" element={<LunchPage />} />
           <Route path="/status" element={<StatusPage />} />
           <Route path="/r/:code" element={<Room />} />
           <Route path="/escape" element={<EscapeGame />} />

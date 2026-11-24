@@ -92,7 +92,7 @@ export default function ShapesGame() {
   return (
     <div className="pptg" onPointerDown={deselect}>
       <div className="sp-title"><span className="sp-logo">P</span><span className="sp-auto">자동 저장 ● 켬</span><span className="sp-tmid">{FILE_NAME} - 저장됨</span>
-        <button className="sp-leave" onClick={() => nav('/')}>나가기</button></div>
+        <button className="sp-leave" onClick={() => nav('/games')}>나가기</button></div>
       <div className="sp-tabs">{['파일', '홈', '삽입', '디자인', '전환', '애니메이션', '슬라이드 쇼', '보기'].map((t) => <span key={t}>{t}</span>)}<span className="on">도형 서식</span></div>
       <div className="sp-ribbon">
         <div className="grp"><div className="bs">{LEVEL_ORDER.map((lv) => <button key={lv} className={'tb' + (lv === level ? ' on' : '')} onClick={() => switchLevel(lv)}>{LEVELS[lv].label}<small>{LEVELS[lv].pieces}개</small></button>)}</div><b>난이도</b></div>

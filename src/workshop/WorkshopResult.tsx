@@ -29,7 +29,7 @@ export default function WorkshopResult() {
             <div className="ws-story"><span className="ws-ic" style={{ background: '#c42b1c' }}>!</span><p>기록 링크가 올바르지 않아요.</p></div>
           )}
           <div className="ws-btns">
-            <button onClick={() => nav('/')}>로비로</button>
+            <button onClick={() => nav('/games')}>게임 목록</button>
             <button className="pri" onClick={() => { if (r) saveRival(r); nav('/workshop') }}>{r ? `나도 도전하기 (${r.n} 님과 비교)` : '도전하기'}</button>
           </div>
         </div>

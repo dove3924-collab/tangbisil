@@ -42,3 +42,11 @@
 - 작은 창: ➖ 한 줄 바 ↔ ⤢ 펼치기, Esc 두 번 → 위젯 스킨 + 금액 가리기
 - 월급날이 주말이면 앞 금요일로 계산 (공휴일은 아직 미반영)
 - 운세·점심 메뉴는 '곧 열려요' 토스트
+
+## 사이트 구조 개편 (claude/home-categories)
+- `/` 홈(`src/site/Home.tsx`): 상태 요약 카드 + 🎮게임 / 🔮운세 / 🍱점심 카드 (오늘 미리보기)
+- `/games` = 기존 Lobby (게임에서 나가기·로비로 버튼은 전부 `/games` 로)
+- `/fortune`(`src/site/{Fortune.tsx,fortune.ts}`): 생년월일(선택) + 날짜 시드로 하루 고정 운세, 업무·금전·인간관계·퇴근운, 행운 5종, 띠별 한 줄, 결과 복사
+- `/lunch`(`src/site/{Lunch.tsx,lunch.ts}`): 메뉴 60개, 종류·상황 필터, 뽑기, '이걸로 먹을래요' 기록(최근 3일 제외)
+- 공통 머리글 `src/site/SiteHeader.tsx`, CSS 접두사 `ts-` (`src/site/site.css`)
+- localStorage: `tbs.status`, `tbs.fortune.birth`, `tbs.lunch.hist`, `tbs.device`

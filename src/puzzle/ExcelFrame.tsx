@@ -14,7 +14,7 @@ export default function ExcelFrame({ fileName, tools, nameBox, formula, tabs, st
       <div className="wb-title">
         <span className="wb-logo">X</span>
         <span className="wb-tmid">{fileName}<span className="dim"> - 저장됨</span></span>
-        <button className="wb-exit" onClick={() => nav('/')}>나가기</button>
+        <button className="wb-exit" onClick={() => nav('/games')}>나가기</button>
       </div>
       <div className="wb-ribbon">{['파일', '홈', '삽입', '페이지 레이아웃', '수식', '데이터', '검토', '보기'].map((t) => <span key={t} className={t === '홈' ? 'on' : ''}>{t}</span>)}</div>
       <div className="wb-tools">{tools}</div>

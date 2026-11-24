@@ -556,7 +556,7 @@ export default function FramedGame() {
   if (s.finished && endStory && s.grade) {
     return <Story scenes={ENDINGS[s.grade]} onDone={() => setEndStory(false)} skipLabel="결과 보기 ⏭" />
   }
-  if (s.finished && s.grade) return <ResultCard s={s} onRestart={restart} onLobby={() => nav('/')} />
+  if (s.finished && s.grade) return <ResultCard s={s} onRestart={restart} onLobby={() => nav('/games')} />
 
   return (
     <GameCtx.Provider value={game}>
@@ -666,7 +666,7 @@ function ResultCard({ s, onRestart, onLobby }: { s: FrState; onRestart: () => vo
             setCopied(true); track('share_result', { game_id: 'framed' })
           }}>{copied ? '✔ 복사했어요' : '자랑 링크 복사'}</button>
         </div>
-        <div className="fr-btns"><button onClick={onLobby}>로비로</button><button className="pri" onClick={onRestart}>처음부터 다시 하기</button></div>
+        <div className="fr-btns"><button onClick={onLobby}>게임 목록</button><button className="pri" onClick={onRestart}>처음부터 다시 하기</button></div>
       </div>
     </div>
   )

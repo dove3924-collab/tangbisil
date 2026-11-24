@@ -521,7 +521,7 @@ export default function WorkshopGame() {
 
   return (
     <div className="ws" onMouseDown={() => setDropdown(null)}>
-      <div className="ws-title"><span className="ws-logo">P</span><span className="ws-tmid">{FILE_NAME}</span><button className="ws-exit" onClick={() => nav('/')}>나가기</button></div>
+      <div className="ws-title"><span className="ws-logo">P</span><span className="ws-tmid">{FILE_NAME}</span><button className="ws-exit" onClick={() => nav('/games')}>나가기</button></div>
       <div className="ws-tabs">
         {['파일', '홈', '삽입', '디자인', '전환', '애니메이션', '슬라이드 쇼', '검토', '보기'].map((t) => <span key={t} className={t === '홈' ? 'on' : ''}>{t}</span>)}
         {ctxTab && <span className="ctx">{ctxTab}</span>}
@@ -729,7 +729,7 @@ export default function WorkshopGame() {
             <label className="nick">닉네임<input value={nick} maxLength={10} onChange={(e) => setNick(e.target.value)} placeholder="자랑할 이름 (최대 10자)" /></label>
           </div>
           <div className="ws-btns">
-            <button onClick={() => nav('/')}>로비로</button><button onClick={reset}>처음부터 다시 하기</button>
+            <button onClick={() => nav('/games')}>게임 목록</button><button onClick={reset}>처음부터 다시 하기</button>
             <button className="pri" onClick={copyShare}>자랑 링크 복사</button>
           </div>
         </Dialog>

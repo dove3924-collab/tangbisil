@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { SKINS, useStatus } from './settings'
 import Widget, { MiniBar } from './Widget'
 import Onboard from './Onboard'
 import SettingsPanel from './SettingsPanel'
 import { PipPortal, pipSupported, useNow, usePip } from './pip'
 import './status.css'
+import SiteHeader from '../site/SiteHeader'
 
-const READY = new Set(['/'])
+const READY = new Set(['/', '/games', '/fortune', '/lunch'])
 
 export default function StatusPage() {
   const [s, update] = useStatus()
@@ -42,10 +43,7 @@ export default function StatusPage() {
 
   return (
     <div className="st-page">
-      <header className="st-head">
-        <Link to="/" className="st-logo">☕ 탕비실</Link>
-        <nav><Link to="/">🎮 게임</Link><button onClick={() => go('/fortune')}>🔮 운세</button><button onClick={() => go('/lunch')}>🍱 점심</button></nav>
-      </header>
+      <SiteHeader />
 
       <main className="st-main">
         <div className={'st-stage st-stage-' + s.skin}>

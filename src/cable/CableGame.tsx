@@ -120,7 +120,7 @@ export default function CableGame() {
   return (
     <div className="pptg cb">
       <div className="sp-title"><span className="sp-logo">V</span><span className="sp-auto">자동 저장 ● 켬</span><span className="sp-tmid">{FILE_NAME} - 저장됨</span>
-        <button className="sp-leave" onClick={() => nav('/')}>나가기</button></div>
+        <button className="sp-leave" onClick={() => nav('/games')}>나가기</button></div>
       <div className="sp-tabs">{['파일', '홈', '삽입', '디자인', '데이터'].map((t) => <span key={t}>{t}</span>)}<span className="on">연결선</span><span>보기</span></div>
       <div className="sp-ribbon">
         <div className="grp"><div className="bs">{LEVEL_ORDER.map((lv) => (
