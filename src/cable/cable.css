@@ -1,0 +1,36 @@
+/* 케이블 연결: Visio 느낌 (shapes.css 의 틀을 파란 색으로) */
+.cb .sp-title, .cb .sp-tabs { background: #3955a3; }
+.cb .sp-logo { color: #3955a3; }
+.cb .sp-tabs span.on { color: #3955a3; }
+.cb .tb:hover:not(:disabled) { background: #e6ecf8; border-color: #b7c6ea; }
+.cb .tb.on { background: #e6ecf8; border-color: #9fb3e0; color: #2b4fa8; }
+.cb .tb .ic { font-size: 18px; line-height: 22px; text-align: center; color: #3955a3; }
+.cb-legend { flex-direction: column; align-items: flex-start !important; gap: 2px !important; font-size: 11px; color: #555; }
+.cb-bar { background: #eef3fb !important; border-color: #c5d4ee !important; color: #1f3a6b !important; }
+.cb-stencil { width: 160px; flex: none; background: #fafafa; border-right: 1px solid #d4d4d4; padding: 12px; font-size: 12px; color: #555; display: flex; flex-direction: column; gap: 8px; }
+.cb-stencil p { color: #999; font-size: 11px; line-height: 1.6; margin-top: 12px; }
+.cb-page { min-width: 0 !important; display: flex; flex-direction: column; align-items: flex-start; }
+.cb-page h1 { color: #1f3864; }
+.cb-page .rule { background: #3955a3 !important; }
+.cb-board { touch-action: manipulation; user-select: none; margin: 4px auto 0; }
+.cb-cell { cursor: pointer; }
+.cb-cell.locked { cursor: not-allowed; }
+.cb-cell:hover rect:first-child { fill: #eef3fb; }
+.cb-tile.spin-cw { animation: cbCw .12s ease-out; }
+.cb-tile.spin-ccw { animation: cbCcw .12s ease-out; }
+@keyframes cbCw { from { transform: rotate(-90deg); } to { transform: rotate(0); } }
+@keyframes cbCcw { from { transform: rotate(90deg); } to { transform: rotate(0); } }
+.cb-toast { background: #2b6cd1 !important; }
+.cb-side { width: 230px; flex: none; background: #fafafa; border-left: 1px solid #cfcfcf; padding: 12px; font-size: 12px; color: #666; }
+.cb-kpi { background: #1f3a6b; color: #fff; padding: 12px 14px; margin-bottom: 10px; }
+.cb-kpi .big { font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.cb-kpi small { opacity: .8; }
+.cb-side ul { padding-left: 16px; line-height: 1.8; }
+@media (max-width: 760px) {
+  .cb .sp-slide { padding: 12px 10px 36px; }
+  .cb-stencil, .cb-side, .cb-legend { display: none !important; }
+  .cb .sp-stage { padding: 8px; }
+}
+
+.cb .sv-kpi { background: #1f3a6b; }
+.cb .sv-last svg { flex: none; }

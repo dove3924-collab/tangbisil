@@ -1,0 +1,39 @@
+영단어 야구 — 단어 목록 출처와 라이선스
+===========================================
+
+정답 목록: SCOWL 2020.12.07 크기 10·20 (가장 흔한 단어) 중 5글자, ENABLE에도 있는 단어 (같은 알파벳이 반복되는 단어 제외)
+입력: 아무 5글자나 허용 (입력 허용 사전 없음)
+생성 스크립트: scripts/gen_wordball_words.py
+
+[SCOWL — Spell Checker Oriented Word Lists, http://wordlist.aspell.net/]
+
+The collective work is Copyright 2000-2018 by Kevin Atkinson as well
+as any of the copyrights mentioned below:
+
+  Copyright 2000-2018 by Kevin Atkinson
+
+  Permission to use, copy, modify, distribute and sell these word
+  lists, the associated scripts, the output created from the scripts,
+  and its documentation for any purpose is hereby granted without fee,
+  provided that the above copyright notice appears in all copies and
+  that both that copyright notice and this permission notice appear in
+  supporting documentation. Kevin Atkinson makes no representations
+  about the suitability of this array for any purpose. It is provided
+  "as is" without express or implied warranty.
+
+[ENABLE word list]
+
+The ENABLE package, mainted by M\Cooper <thegrendel@theriver.com>,
+is in the Public Domain:
+
+  The ENABLE master word list, WORD.LST, is herewith formally released
+  into the Public Domain. Anyone is free to use it or distribute it in
+  any manner they see fit. No fee or registration is required for its
+  use nor are "contributions" solicited (if you feel you absolutely
+  must contribute something for your own peace of mind, the authors of
+  the ENABLE list ask that you make a donation on their behalf to your
+  favorite charity). This word list is our gift to the Scrabble
+  community, as an alternate to "official" word lists. Game designers
+  may feel free to incorporate the WORD.LST into their games. Please
+  mention the source and credit us as originators of the list. Note
+  that if you, as a game designer, use the WORD.LST in your product,

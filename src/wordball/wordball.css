@@ -1,0 +1,94 @@
+/* 영단어 야구: 엑셀 시트처럼 */
+.wb { position: fixed; inset: 0; display: flex; flex-direction: column; background: #fff; color: #222; font-family: 'Malgun Gothic', 'Noto Sans KR', sans-serif; font-size: 12px; user-select: none; }
+.wb button { font: inherit; cursor: pointer; }
+.wb-title { background: #217346; color: #fff; height: 30px; display: flex; align-items: center; padding: 0 12px; gap: 8px; flex-shrink: 0; }
+.wb-logo { width: 16px; height: 16px; background: #fff; color: #217346; font-weight: 700; display: grid; place-items: center; border-radius: 2px; font-size: 11px; }
+.wb-tmid { flex: 1; text-align: center; }
+.wb-tmid .dim { opacity: .75; }
+.wb-exit { background: transparent; border: 1px solid rgba(255,255,255,.6); color: #fff; border-radius: 3px; padding: 1px 10px; }
+.wb-ribbon { background: #217346; display: flex; gap: 2px; padding: 0 8px; flex-shrink: 0; }
+.wb-ribbon span { padding: 5px 12px; color: #e6f0ea; }
+.wb-ribbon span.on { background: #f3f3f3; color: #217346; font-weight: 700; }
+.wb-tools { background: #f3f3f3; min-height: 50px; border-bottom: 1px solid #d4d4d4; display: flex; align-items: center; gap: 4px; padding: 6px 10px; flex-wrap: wrap; flex-shrink: 0; }
+.wb-tools .grp { display: flex; gap: 6px; align-items: center; padding: 0 10px; border-right: 1px solid #ddd; height: 34px; }
+.wb-tools button { background: #fff; border: 1px solid #c8c8c8; border-radius: 2px; padding: 4px 10px; color: #333; white-space: nowrap; }
+.wb-tools button:hover:not(:disabled) { background: #e9f3ee; border-color: #217346; }
+.wb-tools button.on { background: #e6f2ea; border-color: #9cc8aa; color: #1e6b3f; font-weight: 700; }
+.wb-tools button:disabled { color: #aaa; cursor: default; }
+.wb-tools .legend { gap: 12px; color: #555; font-size: 11.5px; }
+.wb-tools .legend i { display: inline-block; width: 14px; height: 12px; border: 1px solid #bbb; vertical-align: -2px; margin-right: 4px; }
+/* 조건부 서식 색 (엑셀 기본 서식에 가깝게) */
+.wb .m-S { background: #c6efce; color: #006100; }
+.wb .m-B { background: #ffeb9c; color: #9c5700; }
+.wb .m-O { background: #e7e6e6; color: #757171; }
+.wb-fbar { display: flex; align-items: center; height: 26px; border-bottom: 1px solid #d4d4d4; flex-shrink: 0; }
+.wb-name { width: 90px; height: 100%; border-right: 1px solid #d4d4d4; display: flex; align-items: center; padding: 0 8px; }
+.wb-fx { width: 36px; text-align: center; color: #888; font-style: italic; border-right: 1px solid #d4d4d4; height: 100%; display: grid; place-items: center; }
+.wb-fval { padding: 0 10px; font-family: Consolas, 'Malgun Gothic', monospace; font-size: 13px; letter-spacing: 1px; }
+.wb-fval .caret { display: inline-block; width: 1px; height: 14px; background: #222; vertical-align: -2px; margin-left: 1px; animation: wb-blink 1s steps(1) infinite; }
+@keyframes wb-blink { 50% { opacity: 0; } }
+.wb-sheet { flex: 1; overflow: auto; min-height: 0; position: relative; }
+.wb-grid { border-collapse: collapse; table-layout: fixed; }
+.wb-grid col.rh { width: 34px; }
+.wb-grid th { background: #f3f3f3; color: #555; font-weight: 400; border: 1px solid #d9d9d9; height: 22px; font-size: 11px; position: sticky; left: 0; }
+.wb-grid thead th { position: sticky; top: 0; z-index: 2; }
+.wb-grid th.on { background: #d3e7da; color: #1e6b3f; font-weight: 700; }
+.wb-grid td { border: 1px solid #e1e1e1; height: 22px; padding: 0 4px; white-space: nowrap; overflow: visible; position: relative; }
+.wb-grid .t1 { font-weight: 700; font-size: 13px; }
+.wb-grid .t2 { color: #777; }
+.wb-grid .hd { text-align: center; background: #f2f2f2; font-weight: 700; color: #444; }
+.wb-grid tr.big td, .wb-grid tr.big th { height: 40px; }
+.wb-grid .lbl { text-align: center; color: #555; }
+.wb-grid .lbl.b { font-weight: 700; color: #444; text-align: left; }
+.wb-grid td.k { text-align: center; font-size: 19px; font-weight: 700; font-family: Consolas, 'Malgun Gothic', monospace; border-color: #d4d4d4; }
+.wb-grid td.sel { outline: 2px solid #217346; outline-offset: -2px; }
+.wb-grid td.sb { text-align: center; font-weight: 700; color: #444; font-size: 13px; }
+.wb-grid td.sb.err { color: #c00000; }
+.wb-tip { position: absolute; left: calc(100% + 6px); top: 6px; z-index: 5; background: #ffffe1; border: 1px solid #999; padding: 4px 8px; font-size: 11.5px; font-weight: 400; color: #222; box-shadow: 1px 1px 3px rgba(0,0,0,.2); white-space: nowrap; }
+.wb-grid tr.kb td { height: 32px; padding: 3px 4px; }
+.wb-keys { display: flex; }
+.wb-keys button { width: 26px; height: 26px; border: 1px solid #d4d4d4; margin-left: -1px; background: #fff; font-family: Consolas, monospace; font-weight: 700; font-size: 13px; color: #333; padding: 0; }
+.wb-keys button.wide { width: 44px; font-family: inherit; font-size: 11.5px; }
+.wb-keys button:hover { outline: 2px solid #217346; outline-offset: -2px; position: relative; }
+/* Sheet2 */
+.wb-grid.stats td { height: 24px; }
+.wb-grid.stats .th { background: #217346; color: #fff; font-weight: 700; }
+.wb-grid.stats .th2 { background: #e9f2ec; color: #1e6b3f; font-weight: 700; }
+.wb-grid.stats .r { text-align: right; }
+.wb-grid.stats .b { font-weight: 700; }
+.wb-grid .bar { display: inline-block; height: 14px; min-width: 2px; max-width: 100%; vertical-align: middle; background: linear-gradient(90deg, #638ec6, #9fbbe3); border: 1px solid #5b84bd; }
+.wb-grid .bar.me { background: linear-gradient(90deg, #63be7b, #a9dcb6); border-color: #4f9e66; }
+.wb-grid .bar.fail { background: #e7e6e6; border-color: #bbb; }
+.wb-tabs { height: 26px; background: #f3f3f3; border-top: 1px solid #d4d4d4; display: flex; padding-left: 40px; flex-shrink: 0; }
+.wb-tabs button { border: 0; border-right: 1px solid #d4d4d4; background: transparent; padding: 0 16px; color: #444; }
+.wb-tabs button.on { background: #fff; color: #217346; font-weight: 700; border-bottom: 3px solid #217346; }
+.wb-tabs .plus { padding: 0 14px; display: flex; align-items: center; color: #666; }
+.wb-status { height: 22px; background: #217346; color: #e7f3ec; display: flex; align-items: center; padding: 0 12px; gap: 18px; font-size: 11.5px; flex-shrink: 0; }
+.wb-status b { color: #fff; }
+.wb-status .warn { color: #ffd9d6; }
+.wb-status .sp { flex: 1; }
+/* 알림창 */
+.wb-dlg-wrap { position: fixed; inset: 0; background: rgba(0,0,0,.06); display: grid; place-items: center; z-index: 20; }
+.wb-dlg { width: 400px; max-width: calc(100vw - 32px); background: #fff; border: 1px solid #9a9a9a; box-shadow: 0 6px 20px rgba(0,0,0,.18); font-size: 12.5px; }
+.wb-dlg.help { width: 460px; }
+.wb-dlg .wd-head { height: 30px; display: flex; align-items: center; padding-left: 12px; border-bottom: 1px solid #e3e3e3; }
+.wb-dlg .wd-x { margin-left: auto; width: 42px; height: 30px; border: 0; background: none; color: #555; }
+.wb-dlg .wd-x:hover { background: #e81123; color: #fff; }
+.wb-dlg .wd-body { display: flex; gap: 14px; padding: 18px 18px 12px; }
+.wb-dlg .wd-ic { width: 32px; height: 32px; border-radius: 50%; background: #1f6fd1; color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 16px; flex: none; }
+.wb-dlg .wd-ic.warn { background: #e8a200; }
+.wb-dlg p { margin: 0 0 6px; line-height: 1.6; }
+.wb-dlg .muted { color: #555; }
+.wb-dlg .wd-pat { font-family: Consolas, monospace; font-size: 13px; line-height: 1.3; margin: 8px 0 0; color: #555; white-space: pre; }
+.wb-dlg ul { margin: 6px 0 8px; padding-left: 18px; line-height: 1.8; }
+.wb-dlg .wd-sw { display: inline-block; width: 18px; text-align: center; font-weight: 700; border: 1px solid #ccc; margin-right: 4px; }
+.wb-dlg .wd-src { color: #888; font-size: 11px; margin-top: 8px; }
+.wb-dlg .wd-foot { display: flex; justify-content: flex-end; gap: 8px; padding: 10px 14px; background: #f3f3f3; border-top: 1px solid #e3e3e3; }
+.wb-dlg .wd-foot button { min-width: 84px; height: 26px; border: 1px solid #adadad; background: #fff; border-radius: 2px; padding: 0 10px; }
+.wb-dlg .wd-foot button.ok { border: 2px solid #217346; }
+.wb-toast { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 8px 16px; border-radius: 4px; font-size: 12.5px; z-index: 30; }
+.wb-dlg .wd-src a { color: #1f6fd1; }
+/* 연장전 */
+.wb-grid tr.ext td.lbl { color: #9c5700; font-weight: 700; background: #fff8e5; }
+.wb-grid tr.last-reg td, .wb-grid tr.last-reg th { border-bottom: 2px solid #217346; }
+.wb-grid .bar.ext { background: linear-gradient(90deg, #e2a73b, #f3d38f); border-color: #c98a1e; }

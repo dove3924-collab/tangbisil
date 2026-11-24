@@ -1,0 +1,34 @@
+/* 알까기 (shapes.css 의 PPT 틀 위에) */
+.alk .sp-bar.mine { background: #fff4d6; border-color: #f0d48a; color: #6b5310; }
+.alk .sp-bar.mine.urgent { background: #fde7e1; border-color: #f3b5a5; color: #a8382f; }
+.alk-tbar { display: inline-block; width: 90px; height: 6px; background: rgba(0,0,0,.08); margin-left: 8px; vertical-align: middle; }
+.alk-tbar i { display: block; height: 100%; background: currentColor; transition: width .2s linear; }
+.alk-slide { display: flex; gap: 22px; align-items: flex-start; padding: 18px 24px 34px !important; min-width: 0 !important; }
+.alk-info { width: 190px; flex: none; font-size: 12px; color: #555; }
+.alk-info h1 { font-size: 18px !important; }
+.alk-lg { display: flex; align-items: center; gap: 6px; margin: 5px 0; }
+.alk-lg i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.alk-note { line-height: 1.7; margin: 12px 0 0; }
+.alk-note.dim { color: #999; font-size: 11px; }
+.alk-tray { margin-top: 12px; border: 1px dashed #9fb0cc; padding: 10px; background: #f7f9fd; }
+.alk-tray .st { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.alk-tray .st i { width: 24px; height: 24px; border-radius: 50%; display: block; border: 1.5px solid #fff; box-shadow: 0 0 0 1px #c5d0e6; cursor: grab; touch-action: none; }
+.alk-pow { margin-top: 14px; border: 1px dashed #e3b9a8; padding: 8px; }
+.alk-pow b { color: #c43e1c; }
+.alk-pow div { height: 8px; background: #eee; margin: 6px 0; }
+.alk-pow div i { display: block; height: 100%; background: linear-gradient(90deg, #70ad47, #ffc000, #c43e1c); }
+.alk-pow small { color: #888; font-size: 11px; }
+.alk-board { flex: none; touch-action: none; user-select: none; }
+.alk-stone.can { cursor: grab; }
+.alk-ghost { position: fixed; border-radius: 50%; pointer-events: none; opacity: .8; z-index: 50; border: 1.5px solid #fff; }
+.alk-over { position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%); background: rgba(255,255,255,.95); border: 1px solid #a8d5b5; box-shadow: 0 6px 20px rgba(0,0,0,.15); padding: 16px 26px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.alk-over b { color: #1d6b38; font-size: 18px; }
+.alk-over span { color: #555; }
+.alk-dots { display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap; }
+.alk-dots i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+.alk-dots i.x { border: 1px dashed #bbb; background: #fff; }
+.alk-st { font-size: 10px; color: #888; margin-top: 4px; }
+@media (max-width: 1000px) {
+  .alk-slide { flex-direction: column; }
+  .alk-info { width: auto; }
+}
