@@ -1,4 +1,5 @@
 import SiteHeader from '../site/SiteHeader'
+import '../site/games.css'
 import { useMemo, useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FILE_LABEL, GAMES, type Game } from '../lib/games'
@@ -72,7 +73,7 @@ export default function Lobby() {
       <SiteHeader />
       <header className="topbar">
         <div className="wrap topbar-in">
-          <a className="logo" href="/games" onClick={(e) => { e.preventDefault(); setTab('all'); setQuery('') }}>🎮 게임</a>
+          <div className="gm-title"><a className="logo" href="/games" onClick={(e) => { e.preventDefault(); setTab('all'); setQuery('') }}>🎮 게임</a><span>회사에서 몰래 하는 게임 · 설치·가입 없이 바로 플레이</span></div>
           <nav className="topnav">
             {searchOpen ? (
               <input
@@ -98,13 +99,10 @@ export default function Lobby() {
       </header>
 
       <main className="wrap">
-        <section className="hero">
-          <h1>회사에서 몰래 하는 게임</h1>
-          <p>설치·가입 없이 바로 플레이</p>
-          <div className="hint">
-            누가 오면 <kbd>Esc</kbd> <kbd>Esc</kbd> → 엑셀 화면으로 즉시 전환
-          </div>
-        </section>
+        <div className="gm-top">
+        <div className="hint">
+          <b>🙈 누가 오면</b> <kbd>Esc</kbd> <kbd>Esc</kbd> → 엑셀 화면으로 즉시 전환
+        </div>
 
         <form className="join card" onSubmit={join}>
           <div>
@@ -123,6 +121,7 @@ export default function Lobby() {
             {codeError && <span className="err">{codeError}</span>}
           </div>
         </form>
+        </div>
 
         {tab === 'updates' ? (
           <Updates />
@@ -165,7 +164,7 @@ export default function Lobby() {
       </main>
 
       <footer className="wrap footer">
-        <span>탕비실</span>
+        <span>☕ 탕비실</span>
         <a href="#" onClick={(e) => { e.preventDefault(); setTab('howto'); window.scrollTo(0, 0) }}>플레이 방법</a>
         <span className="credit">made by YJ</span>
       </footer>
