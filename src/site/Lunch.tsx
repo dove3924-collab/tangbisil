@@ -12,7 +12,7 @@ export default function LunchPage() {
   const timer = useRef<number>()
   const list = candidates(cats, tags)
 
-  useEffect(() => { document.title = '오늘 뭐 먹지? — 탕비실' }, [])
+  useEffect(() => { document.title = '점심 추천 — 탕비실' }, [])
   useEffect(() => () => window.clearInterval(timer.current), [])
 
   const toggle = <T,>(arr: T[], x: T) => (arr.includes(x) ? arr.filter((a) => a !== x) : [...arr, x])
@@ -39,7 +39,7 @@ export default function LunchPage() {
     <div className="ts-page">
       <SiteHeader />
       <main className="ts-in ts-narrow">
-        <div className="ts-ptitle"><h1>🍱 오늘 뭐 먹지?</h1><small>조건을 고르고 뽑기 버튼을 눌러요</small></div>
+        <div className="ts-ptitle"><h1>🍱 점심 추천</h1><small>오늘 뭐 먹지? 조건을 고르고 뽑기 버튼을 눌러요</small></div>
 
         <section className="ts-card">
           <div className="ts-frow"><b>종류</b><div className="ts-chips">
@@ -69,10 +69,10 @@ export default function LunchPage() {
           )}
         </section>
 
-        <section className="ts-card">
-          <h3>후보 메뉴</h3>
+        <details className="ts-card ts-fold">
+          <summary><h3>후보 메뉴 <small>{list.length}개</small></h3><span className="ts-fold-i">펼치기</span></summary>
           <div className="ts-cands">{list.map((m) => <button key={m.name} className={m.name === pick.name ? 'on' : ''} onClick={() => setPick(m)}>{m.emoji} {m.name}</button>)}</div>
-        </section>
+        </details>
 
         {hist.length > 0 && (
           <section className="ts-card">

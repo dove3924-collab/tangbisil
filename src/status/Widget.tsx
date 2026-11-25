@@ -18,7 +18,7 @@ export interface WidgetProps {
 export const MENU = [
   { icon: '🎮', label: '게임', path: '/games' },
   { icon: '🔮', label: '운세', path: '/fortune' },
-  { icon: '🍱', label: '점심', path: '/lunch' },
+  { icon: '🍱', label: '점심 추천', path: '/lunch' },
 ]
 
 type Ctx = WidgetProps & {

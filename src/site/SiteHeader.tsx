@@ -5,7 +5,7 @@ const NAV = [
   { to: '/status', label: '상태창', icon: '🕒' },
   { to: '/games', label: '게임', icon: '🎮' },
   { to: '/fortune', label: '운세', icon: '🔮' },
-  { to: '/lunch', label: '점심', icon: '🍱' },
+  { to: '/lunch', label: '점심 추천', icon: '🍱' },
 ]
 
 /** 탕비실 공통 머리글 */

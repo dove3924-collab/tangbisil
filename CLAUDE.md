@@ -47,7 +47,8 @@
 - `/` 홈(`src/site/Home.tsx`): 상태 요약 카드 + 🎮게임 / 🔮운세 / 🍱점심 카드 (오늘 미리보기)
 - `/games` = 기존 Lobby (게임에서 나가기·로비로 버튼은 전부 `/games` 로)
 - `/fortune`(`src/site/{Fortune.tsx,fortune.ts}`): 생년월일(선택) + 날짜 시드로 하루 고정 운세, 업무·금전·인간관계·퇴근운, 행운 5종, 띠별 한 줄, 결과 복사
-- `/lunch`(`src/site/{Lunch.tsx,lunch.ts}`): 메뉴 60개, 종류·상황 필터, 뽑기, '이걸로 먹을래요' 기록(최근 3일 제외)
+- `/lunch` 점심 추천(`src/site/{Lunch.tsx,lunch.ts}`): 메뉴 117개, 후보 목록은 접기·펼치기, 종류·상황 필터, 뽑기, '이걸로 먹을래요' 기록(최근 3일 제외)
 - 공통 머리글 `src/site/SiteHeader.tsx`, CSS 접두사 `ts-` (`src/site/site.css`)
 - `/games` 디자인: `src/site/games.css` (`.lobby` 안에서만 덮어씀, 남색 바 → 크림 제목줄 + 칩 탭, 보스키 안내 + 방 코드 입장 한 줄, 둥근 카드)
 - localStorage: `tbs.status`, `tbs.fortune.birth`, `tbs.lunch.hist`, `tbs.device`
+- 월루 퍼즐 순위 기록 옮기기: `supabase/wollu_records_export.sql` (월루 SQL Editor 실행 → 결과 복사 → 탕비실 SQL Editor 실행). 브라우저에 저장된 개인 기록은 주소가 달라 자동으로 못 옮김
