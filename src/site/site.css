@@ -143,3 +143,13 @@
   .ts-frow { flex-direction: column; gap: 6px; }
 }
 .lobby .ts-in { max-width: 1140px; padding-left: 16px; padding-right: 16px; }
+.ts-fold summary { list-style: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+.ts-fold summary::-webkit-details-marker { display: none; }
+.ts-fold summary h3 { margin: 0; }
+.ts-fold summary h3 small { color: var(--mu); font-weight: 400; font-size: 13px; margin-left: 4px; }
+.ts-fold-i { font-size: 13px; color: var(--br); font-weight: 700; }
+.ts-fold-i::after { content: ' ▾'; }
+.ts-fold[open] .ts-fold-i { font-size: 0; }
+.ts-fold[open] .ts-fold-i::before { content: '접기 ▴'; font-size: 13px; }
+.ts-fold[open] .ts-fold-i::after { content: ''; }
+.ts-fold[open] summary { margin-bottom: 12px; }

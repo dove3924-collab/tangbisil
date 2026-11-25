@@ -79,7 +79,7 @@ export default function Home() {
           </article>
 
           <article className="ts-cat ts-cat-lunch">
-            <div className="ts-cat-h"><span className="ts-cat-i">🍱</span><div><h2>오늘 점심</h2><small>고민은 탕비실이 대신</small></div></div>
+            <div className="ts-cat-h"><span className="ts-cat-i">🍱</span><div><h2>점심 추천</h2><small>고민은 탕비실이 대신</small></div></div>
             <div className="ts-lpick">
               <span className="ts-lemoji">{lunch.emoji}</span>
               <b>{lunch.name}</b>
@@ -89,7 +89,7 @@ export default function Home() {
               <button className="ts-btn ts-o" onClick={() => setLunch(randomPick(candidates([], []), lunch.name))}>🎲 다른 거</button>
               <button className="ts-btn" onClick={() => nav('/lunch')}>조건 걸고 고르기</button>
             </div>
-            <Link to="/lunch" className="ts-more">점심 고르기 ›</Link>
+            <Link to="/lunch" className="ts-more">점심 추천 더 보기 ›</Link>
           </article>
         </section>
       </main>
