@@ -8,8 +8,9 @@ import { COLORS } from '../lib/colors'
 import { track } from '../lib/analytics'
 import { battlePuzzles } from '../shapes/logic'
 import { battleBoards } from '../cable/logic'
+import { battleBoards as linkBoards } from '../link/logic'
 
-const MIN_PLAYERS: Record<string, number> = { liar: 3, bingo: 2, bell: 2, shapevs: 2, alkkagi: 2, cablevs: 2 }
+const MIN_PLAYERS: Record<string, number> = { liar: 3, bingo: 2, bell: 2, shapevs: 2, alkkagi: 2, cablevs: 2, linkvs: 2 }
 
 type Panel = 'people' | 'chat' | null
 
@@ -200,6 +201,18 @@ export default function WaitingRoom({ room, refresh }: { room: RoomFull; refresh
                   </section>
                 )}
 
+                {room.game === 'linkvs' && (
+                  <section className="box">
+                    <div className="box-label">대결 설정{isHost ? ' (방장만 변경)' : ''}</div>
+                    <SettingSelect label="난이도" disabled={!isHost} value={room.settings.lkLevel ?? 'normal'}
+                      options={[['easy', '초급 (5×5)'], ['normal', '중급 (7×7)'], ['hard', '고급 (9×9)']]}
+                      onChange={(v) => setSetting({ lkLevel: v as 'easy' | 'normal' | 'hard' })} />
+                    <SettingSelect label="승리 조건" disabled={!isHost} value={String(room.settings.lkTarget ?? 3)}
+                      options={[['1', '1점 (단판)'], ['2', '2점 먼저'], ['3', '3점 먼저'], ['4', '4점 먼저'], ['5', '5점 먼저']]} onChange={(v) => setSetting({ lkTarget: Number(v) })} />
+                    <p className="dim" style={{ margin: 0 }}>2~4명 · 같은 판을 먼저 빈칸 없이 다 채우면 1점 · 못 풀겠으면 [넘기기] 제안 → 모두 동의하면 정답 공개 후 다음 판 · 드래그로 잇기 · 대화 Enter</p>
+                  </section>
+                )}
+
                 {room.game === 'alkkagi' && (
                   <section className="box">
                     <div className="box-label">게임 설정{isHost ? ' (방장만 변경)' : ''}</div>
@@ -261,7 +274,7 @@ export default function WaitingRoom({ room, refresh }: { room: RoomFull; refresh
                 {isHost && canStart ? '모두 모였으면 시작하세요.' : ''}
               </p>
               <button className="btn-start" disabled={!isHost || !canStart}
-                onClick={() => { track('game_start', { game_id: room.game, players: room.players.length }); run(() => (room.game === 'bingo' ? api.bingoStart(room.code) : room.game === 'bell' ? api.bellStart(room.code) : room.game === 'shapevs' ? api.shvStart(room.code, battlePuzzles(room.settings.shLevel ?? 'normal')) : room.game === 'alkkagi' ? api.alkStart(room.code) : room.game === 'cablevs' ? api.cbvStart(room.code, battleBoards(room.settings.cbLevel ?? 'normal')) : api.liarStart(room.code))) }}>
+                onClick={() => { track('game_start', { game_id: room.game, players: room.players.length }); run(() => (room.game === 'bingo' ? api.bingoStart(room.code) : room.game === 'bell' ? api.bellStart(room.code) : room.game === 'shapevs' ? api.shvStart(room.code, battlePuzzles(room.settings.shLevel ?? 'normal')) : room.game === 'alkkagi' ? api.alkStart(room.code) : room.game === 'cablevs' ? api.cbvStart(room.code, battleBoards(room.settings.cbLevel ?? 'normal')) : room.game === 'linkvs' ? api.lkvStart(room.code, linkBoards(room.settings.lkLevel ?? 'normal')) : api.liarStart(room.code))) }}>
                 게임 시작
               </button>
             </div>

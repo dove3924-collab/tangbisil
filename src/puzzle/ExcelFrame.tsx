@@ -4,9 +4,11 @@ import '../wordball/wordball.css'
 import './puzzle.css'
 
 /** 퍼즐 게임 공통 엑셀 화면 틀 (영단어 야구와 같은 모양) */
-export default function ExcelFrame({ fileName, tools, nameBox, formula, tabs, status, children, overlay, side }: {
+export default function ExcelFrame({ fileName, tools, nameBox, formula, tabs, status, children, overlay, side, onExit, titleExtra }: {
   fileName: string; tools: ReactNode; nameBox: string; formula: ReactNode; tabs: ReactNode; status: ReactNode; children: ReactNode; overlay?: ReactNode
   side?: ReactNode // 판 오른쪽 작업 창
+  onExit?: () => void // 나가기 (없으면 게임 목록으로)
+  titleExtra?: ReactNode // 제목 줄 오른쪽 (공동 편집자 동그라미 등)
 }) {
   const nav = useNavigate()
   return (
@@ -14,7 +16,7 @@ export default function ExcelFrame({ fileName, tools, nameBox, formula, tabs, st
       <div className="wb-title">
         <span className="wb-logo">X</span>
         <span className="wb-tmid">{fileName}<span className="dim"> - 저장됨</span></span>
-        <button className="wb-exit" onClick={() => nav('/games')}>나가기</button>
+        {titleExtra}<button className="wb-exit" onClick={onExit ?? (() => nav('/games'))}>나가기</button>
       </div>
       <div className="wb-ribbon">{['파일', '홈', '삽입', '페이지 레이아웃', '수식', '데이터', '검토', '보기'].map((t) => <span key={t} className={t === '홈' ? 'on' : ''}>{t}</span>)}</div>
       <div className="wb-tools">{tools}</div>

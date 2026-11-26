@@ -28,7 +28,7 @@ function cleanPath(pathname: string) {
 }
 const PAGE_TITLE: Record<string, string> = {
   '/': '홈', '/games': '게임 목록', '/status': '상태창', '/fortune': '운세', '/lunch': '점심', '/r/:code': '게임 방', '/escape': '야근 탈출', '/escape/result': '야근 탈출 결과 공유',
-  '/workshop': '워크숍 조난기', '/workshop/result': '워크숍 조난기 결과 공유', '/wordball': '영단어 야구', '/mines': '지뢰찾기', '/sudoku': '스도쿠', '/framed': '누명 탈출', '/framed/result': '누명 탈출 결과 공유',
+  '/workshop': '워크숍 조난기', '/workshop/result': '워크숍 조난기 결과 공유', '/wordball': '영단어 야구', '/mines': '지뢰찾기', '/link': '셀 링크', '/sudoku': '스도쿠', '/framed': '누명 탈출', '/framed/result': '누명 탈출 결과 공유',
 }
 
 export function trackPage(pathname: string) {

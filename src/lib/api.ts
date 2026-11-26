@@ -4,6 +4,7 @@ import type { BingoState } from './bingo'
 import type { BellState } from './bell'
 import type { ShvState } from './shapevs'
 import type { CbvState } from '../cable/vs'
+import type { LkvState } from '../link/vs'
 import type { AlkState } from '../alkkagi/types'
 
 export interface Player {
@@ -29,6 +30,8 @@ export interface RoomSettings {
   alkPlace?: 'free' | 'line'
   cbLevel?: 'easy' | 'normal' | 'hard'
   cbTarget?: number
+  lkLevel?: 'easy' | 'normal' | 'hard'
+  lkTarget?: number
   shSec?: number
 }
 
@@ -180,6 +183,14 @@ export const api = {
   cbvSkip: (code: string, round: number, vote: boolean) => rpc<void>('cbv_skip', { p_code: code, p_round: round, p_vote: vote }),
   cbvChat: (code: string, text: string) => rpc<void>('cbv_chat', { p_code: code, p_text: text }),
   cbvToWaiting: (code: string) => rpc<void>('cbv_to_waiting', { p_code: code }),
+  lkvStart: (code: string, b: { puzzles: unknown[]; answers: number[][][] }) => rpc<void>('lkv_start', { p_code: code, p_puzzles: b.puzzles, p_answers: b.answers }),
+  lkvState: (code: string) => rpc<LkvState | null>('lkv_state', { p_code: code }),
+  lkvProgress: (code: string, round: number, linked: number, pct: number) => rpc<void>('lkv_progress', { p_code: code, p_round: round, p_linked: linked, p_pct: pct }),
+  lkvDone: (code: string, round: number, paths: number[][]) => rpc<{ ok: boolean; late?: boolean; ms?: number }>('lkv_done', { p_code: code, p_round: round, p_paths: paths }),
+  lkvTick: (code: string) => rpc<void>('lkv_tick', { p_code: code }),
+  lkvSkip: (code: string, round: number, vote: boolean) => rpc<void>('lkv_skip', { p_code: code, p_round: round, p_vote: vote }),
+  lkvChat: (code: string, text: string) => rpc<void>('lkv_chat', { p_code: code, p_text: text }),
+  lkvToWaiting: (code: string) => rpc<void>('lkv_to_waiting', { p_code: code }),
   alkStart: (code: string) => rpc<void>('alk_start', { p_code: code }),
   alkState: (code: string) => rpc<AlkState | null>('alk_state', { p_code: code }),
   alkPlace: (code: string, round: number, pos: [number, number][], done: boolean) => rpc<void>('alk_place', { p_code: code, p_round: round, p_pos: pos, p_done: done }),

@@ -11,6 +11,7 @@ import BellGame from '../components/BellGame'
 import ShapesVsGame from '../shapes/ShapesVsGame'
 import AlkkagiGame from '../alkkagi/AlkkagiGame'
 import CableVsGame from '../cable/CableVsGame'
+import LinkVsGame from '../link/LinkVsGame'
 
 export default function Room() {
   const code = (useParams().code ?? '').toUpperCase()
@@ -47,6 +48,7 @@ export default function Room() {
   if (room.status === 'playing' && room.game === 'shapevs') return <ShapesVsGame room={room} />
   if (room.status === 'playing' && room.game === 'alkkagi') return <AlkkagiGame room={room} />
   if (room.status === 'playing' && room.game === 'cablevs') return <CableVsGame room={room} />
+  if (room.status === 'playing' && room.game === 'linkvs') return <LinkVsGame room={room} />
   return <WaitingRoom room={room} refresh={refresh} />
 }
 
