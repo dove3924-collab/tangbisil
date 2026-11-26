@@ -52,3 +52,8 @@
 - `/games` 디자인: `src/site/games.css` (`.lobby` 안에서만 덮어씀, 남색 바 → 크림 제목줄 + 칩 탭, 보스키 안내 + 방 코드 입장 한 줄, 둥근 카드)
 - localStorage: `tbs.status`, `tbs.fortune.birth`, `tbs.lunch.hist`, `tbs.device`
 - 월루 퍼즐 순위 기록 옮기기: `supabase/wollu_records_export.sql` (월루 SQL Editor 실행 → 결과 복사 → 탕비실 SQL Editor 실행). 브라우저에 저장된 개인 기록은 주소가 달라 자동으로 못 옮김
+
+## 셀 링크 · 셀 링크 대결 (2026-11-26, 월루와 같이 정식 오픈)
+- 월루에서 만든 그대로 옮김 (`src/link/`, `src/hooks/useLinkVs.ts`, DB `0014_link_battle.sql`). 자세한 내용은 월루 기록 참고
+- 탕비실은 나가기가 `/games` 로 감 (ExcelFrame `onExit`, LinkVsGame)
+- **탕비실 Supabase에도 0014 SQL 실행 필요**

@@ -30,12 +30,14 @@ const ALL_GAMES: Game[] = [
   { id: 'shapevs', title: '도형 배치 대결', desc: '같은 슬라이드를 동시에! 부서 도형을 먼저 빈틈없이 채우는 사람이 1점. 혼자 연습은 퍼즐의 「도형 배치」', type: 'PPTX', players: '2~4명', minutes: 5, playable: true, kind: 'party' },
   { id: 'alkkagi', title: '알까기', desc: '슬라이드 위 원형 도형을 튕겨서 상대 도형을 영역 밖으로! 자기 진영에 몰래 배치하고, 마지막까지 남으면 승리', type: 'PPTX', players: '2명', minutes: 5, playable: true, kind: 'party' },
   { id: 'cablevs', title: '케이블 연결 대결', desc: '같은 네트워크 구성도를 동시에! 케이블을 돌려 서버와 모든 PC를 먼저 이으면 1점. 혼자 연습은 퍼즐의 「케이블 연결」', type: 'VSDX', players: '2~4명', minutes: 5, playable: true, kind: 'party' },
+  { id: 'linkvs', title: '셀 링크 대결', desc: '같은 판을 동시에! 같은 글자끼리 셀을 이어 먼저 빈칸 없이 채우면 1점. 혼자 연습은 퍼즐의 「셀 링크」', type: 'XLSX', players: '2~4명', minutes: 5, playable: true, kind: 'party' },
   { id: 'bingo', title: '빙고', desc: '주제 단어로 판을 채우고, 먼저 완성해서 [빙고!]를 누르면 승리', type: 'DOCX', players: '2~8명', minutes: 8, playable: true, kind: 'party' },
   { id: 'wordball', title: '영단어 야구', desc: '5글자 영단어 맞히기. 스트라이크·볼로 좁혀서 정규 9회 안에, 못 맞히면 연장전', type: 'XLSX', players: '1인', minutes: 3, playable: true, kind: 'puzzle' },
   { id: 'mines', title: '지뢰찾기', desc: '재고 점검표 속 지뢰 피하기. 초급·중급·고급, 양쪽 클릭으로 주변 열기까지', type: 'XLSX', players: '1인', minutes: 3, playable: true, kind: 'puzzle' },
   { id: 'sudoku', title: '스도쿠', desc: '예산 배분표 빈칸 채우기. 초급·중급·고급, 메모·자동 메모·되돌리기 지원', type: 'XLSX', players: '1인', minutes: 10, playable: true, kind: 'puzzle' },
   { id: 'shapes', title: '도형 배치', desc: '조직 개편안 슬라이드의 빈 공간에 부서 도형을 빈틈없이 채우기. 돌리고 뒤집어서 딱 맞게. 친구랑 겨루려면 파티 게임의 「도형 배치 대결」', type: 'PPTX', players: '1인', minutes: 3, playable: true, kind: 'puzzle' },
   { id: 'cable', title: '케이블 연결', desc: '네트워크 구성도의 케이블 조각을 돌려서 서버와 모든 PC를 잇기. 클릭 한 번에 90도. 친구랑 겨루려면 파티 게임의 「케이블 연결 대결」', type: 'VSDX', players: '1인', minutes: 3, playable: true, kind: 'puzzle' },
+  { id: 'link', title: '셀 링크', desc: '같은 글자끼리 셀을 선으로 이어서 시트를 빈칸 없이 채우기. 선끼리 겹치면 안 돼요. 친구랑 겨루려면 파티 게임의 「셀 링크 대결」', type: 'XLSX', players: '1인', minutes: 3, playable: true, kind: 'puzzle' },
   { id: 'mafia', title: '마피아 게임', desc: '비밀 미션을 수행하며 마피아를 색출', type: 'MSG', players: '5~10명', minutes: 15, playable: false, kind: 'party' },
 ]
 

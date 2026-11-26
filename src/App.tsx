@@ -10,6 +10,7 @@ import WorkshopGame from './workshop/WorkshopGame'
 import WorkshopResult from './workshop/WorkshopResult'
 import WordballGame from './wordball/WordballGame'
 import MinesGame from './mines/MinesGame'
+import LinkGame from './link/LinkGame'
 import SudokuGame from './sudoku/SudokuGame'
 import ShapesGame from './shapes/ShapesGame'
 import CableGame from './cable/CableGame'
@@ -47,6 +48,7 @@ export default function App() {
           <Route path="/workshop/result" element={<WorkshopResult />} />
           <Route path="/wordball" element={<WordballGame />} />
           <Route path="/mines" element={<MinesGame />} />
+          <Route path="/link" element={<LinkGame />} />
           <Route path="/sudoku" element={<SudokuGame />} />
           <Route path="/shapes" element={<ShapesGame />} />
           <Route path="/cable" element={<CableGame />} />
